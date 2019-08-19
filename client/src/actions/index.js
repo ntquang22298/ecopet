@@ -91,6 +91,7 @@ export const getAllPetsAddress = () => async (dispatch, getState) => {
   const state = getState();
   const factory = state.tomo.factory;
   const account = state.tomo.account;
+  console.log('test', factory);
   let petsAddress = await factory.methods.getAllPetAddressOf(account).call({ from: account });
   dispatch({
     type: GET_ALL_PETS_ADDRESS,
